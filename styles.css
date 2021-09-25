@@ -69,13 +69,9 @@ article {
 }
 
 .div-board-container {
-  display: flex;
-  flex-wrap: wrap;
-  /* border: 2px solid green; */
+  display: grid;
+  grid-template-columns: repeat(3, auto);
   width: 50%;
-  margin-left: 215px;
-  margin-top: 200px;
-  /* margin:auto; */
 }
 
 .board-section-header {
