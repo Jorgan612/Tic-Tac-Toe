@@ -39,6 +39,12 @@ article {
   height: 115px;
 }
 
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .vamplips-player1-section,
 .skull-player2-section,
 .board-section {
@@ -64,7 +70,7 @@ article {
   border-style: ridge;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
-  /* box-shadow: 3px 3px 3px #444444; */
+  box-shadow: 3px 0px 3px #444444;
   margin: 0;
 }
 
@@ -72,6 +78,7 @@ article {
   display: grid;
   grid-template-columns: repeat(3, auto);
   width: 50%;
+  border:2px solid red;
 }
 
 .board-section-header {
