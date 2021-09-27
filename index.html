@@ -11,36 +11,40 @@
   <body>
     <main>
       <section class="vamplips-player1-section">
-        <img class="vamplips-icon" src="./assets/vamplips.svg" alt="red vampire lips">
         <h1>Ghoul One</h1>
+        <p>🦇</p>
+        <h2 class="vamp-wins"></h2>
         <div>
           <h3 class="player2-wins hidden"></h3>
         </div>
       </section>
       <section class="board-section">
         <h1 class="board-section-header">Play if you Dare!</h1>
-        <h1 class="next-turn-vamps">It's<span><img class="vamplips-icon" src="./assets/vamplips.svg" alt="red vampire lips"></span>turn!</h1>
-        <h1 class="next-turn-skull hidden">It's<span><img class="skull-icon" src="./assets/purzen_skull.svg" alt="white human skull"></span>turn!</h1>
-        <div class="div-board-container">
-          <article class="one"></article>
-          <article class="two"></article>
-          <article class="three"></article>
-          <article class="four"></article>
-          <article class="five"></article>
-          <article class="six"></article>
-          <article class="seven"></article>
-          <article class="eight"></article>
-          <article class="nine"></article>
+        <h1 class="vamp-turn" id="vamp">It's 🦇 turn!</h1>
+        <h1 class="skull-turn hidden" id="skull">It's 💀 turn!</h1>
+        <div class="div-board-container" id="boardContainer">
+          <article class="zero box" id="0"></article>
+          <article class="one box" id="1"></article>
+          <article class="two box" id="2"></article>
+          <article class="three box" id="3"></article>
+          <article class="four box" id="4"></article>
+          <article class="five box" id="5"></article>
+          <article class="six box" id="6"></article>
+          <article class="seven box" id="7"></article>
+          <article class="eight box" id="8"></article>
         </div>
       </section>
       <section class="skull-player2-section">
-        <img class="skull-icon" src="./assets/purzen_skull.svg" alt="white human skull">
         <h1>Ghoul Two</h1>
+        <p>💀</p>
+        <h2 class="skull-wins"></h2>
         <div>
           <h3 class="player2-wins hidden"></h3>
         </div>
       </section>
     </main>
-    <script type="text/javascript" src="main.js"></script>
+    <script src="game.js"></script>
+    <script src="player.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

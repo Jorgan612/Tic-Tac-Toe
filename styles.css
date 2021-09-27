@@ -5,7 +5,6 @@
 /* purple #6a329f */
 /* blood red #900C2C */
 
-
 * {
   font-family: 'Grechen Fuemen', cursive;
 }
@@ -24,12 +23,17 @@ main {
   display: flex;
   flex-direction: row;
   height: 100vh;
-  /* border: 2px solid pink; */
 }
-.vamplips-icon,
+
+/* .vamplips-icon,
 .skull-icon {
   width: 80px;
   margin-top: 30px;
+} */
+
+p {
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 article {
@@ -37,6 +41,13 @@ article {
   border-style: outset;
   width: 142px;
   height: 115px;
+  cursor: pointer;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .vamplips-player1-section,
@@ -64,7 +75,7 @@ article {
   border-style: ridge;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
-  /* box-shadow: 3px 3px 3px #444444; */
+  box-shadow: 3px 0px 3px #444444;
   margin: 0;
 }
 
@@ -72,6 +83,7 @@ article {
   display: grid;
   grid-template-columns: repeat(3, auto);
   width: 50%;
+  /* border:2px solid red; */
 }
 
 .board-section-header {
@@ -82,26 +94,26 @@ article {
   padding: 20px;
 }
 
-.three,
-.six,
-.nine {
+.two,
+.five,
+.eight {
   border-right: none;
 }
 
 .seven,
 .eight,
-.nine {
+.six {
   border-bottom: none;
 }
 
-.one,
-.four,
-.seven {
+.zero,
+.three,
+.six {
   border-left: none;
 }
 
+.zero,
 .one,
-.two,
-.three {
+.two {
   border-top: none;
 }
