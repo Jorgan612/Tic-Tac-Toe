@@ -41,6 +41,7 @@ article {
   border-style: outset;
   width: 142px;
   height: 115px;
+  cursor: pointer;
 }
 
 .box {

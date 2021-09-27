@@ -1,40 +1,56 @@
 // Query Selectors
 
 var boardContainer = document.querySelector('#boardContainer');
-var boardIconContainer = document.querySelector('.box');
+// var boardIconContainer = document.querySelectorAll('.box');
+var boardArticle = document.querySelector('article');
 var vampIcon = document.querySelector('#vamp');
 var skullIcon = document.querySelector('#skull');
+var boxZero = document.getElementById('0');
+var boxOne = document.getElementById('1');
+var boxTwo = document.getElementById('2');
+var boxThree = document.getElementById('3');
+var boxFour = document.getElementById('4');
+var boxFive = document.getElementById('5');
+var boxSix = document.getElementById('6');
+var boxSeven = document.getElementById('7');
+var boxEight = document.getElementById('8');
 
-// is this needed to determine current ghoul?
+var boxes = [boxZero, boxOne, boxTwo, boxThree, boxFour, boxFive, boxSix, boxSeven, boxEight];
 var game = new Game();
 
 
 // Event Listeners
 
-boardIconContainer.addEventListener('click', clickTargetBox);
-
+boardContainer.addEventListener('click', function(event) {
+  var target = event.target;
+  if (target.matches('article')) {
+    clickTargetBox(target);
+  }
+});
 
 // Functions
 
-function clickTargetBox() {
-  if (event.target.classList.contains('box')) {
+function clickTargetBox(target) {
+  if (target.innerHTML !== "") {
+    return;
+  } else {
+    game.trackBoardData(target);
     game.trackPlayerTurn();
- console.log(event.target)
+    ghoulTurn(target);
+    }
+  }
+
+function ghoulTurn(target) {
+  if (game.turn === game.player2) {
+    target.innerText = '🦇';
+    skullIcon.classList.remove('hidden');
+    vampIcon.classList.add('hidden');
+  } else {
+    target.innerText = '💀';
+    skullIcon.classList.add('hidden');
+    vampIcon.classList.remove('hidden');
   }
 }
-
-function ghoulOneTurn() {
-  skullIcon.classList.remove('hidden');
-  vampIcon.classList.add('hidden');
-  boardIconContainer.innerHTML += `<p>🦇</p>`
-}
-
-function ghoulTwoTurn() {
-  skullIcon.classList.add('hidden');
-  vampIcon.classList.remove('hidden');
-  boardIconContainer.innerHTML += `<p>💀</p>`
-}
-
 
 
 // `<img class="skull-icon" src="./assets/purzen_skull.svg" alt="white human skull">`
