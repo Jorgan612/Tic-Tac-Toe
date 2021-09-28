@@ -18,6 +18,7 @@ var boxEight = document.getElementById('8');
 
 var boxes = [boxZero, boxOne, boxTwo, boxThree, boxFour, boxFive, boxSix, boxSeven, boxEight];
 var game = new Game();
+// var timeoutId = setTimeout(resetBoard, 2000);
 
 // Event Listeners
 
@@ -58,10 +59,8 @@ function ghoul1Wins(target) {
   skullIcon.classList.add('hidden');
   vampIcon.classList.add('hidden');
   vampWin.classList.remove('hidden');
-  // need to figure out a way to access player wins from class
   vampTotalWins.innerText = `Wins: ${game.player1.wins}`;
-  // invoke board reset function
-  // resetBoard(); DOESN'T WORK
+  // newGame();
 };
 
 function ghoul2Wins(target) {
@@ -69,11 +68,22 @@ function ghoul2Wins(target) {
   vampIcon.classList.add('hidden');
   skullWin.classList.remove('hidden');
   skullTotalWins.innerText = `Wins: ${game.player2.wins}`;
-  // invoke board reset function
-  // resetBoard(); DOESN'T WORK
 };
 
-// doesn't work vvvvvv
-function resetBoard(target) {
-  target.innerText = "";
-};
+
+// function newGame() {
+//   // window.setTimeout(resetBoard, 2000);
+//   // game.resetGame();
+//   skullIcon.classList.add('hidden');
+//   vampIcon.classList.remove('hidden');
+//   vampWin.classList.remove('hidden');
+//   return;
+// };
+
+
+//clearing emojis from board vvvv
+function resetBoard() {
+  for (var i = 0; i < boxes.length; i++) {
+    boxes[i].innerText = '';
+  }
+}

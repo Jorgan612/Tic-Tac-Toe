@@ -1,7 +1,7 @@
 # Title
 Mod1 + Tic Tac Toe
 
-  
+
 ## Table of Contents
   - [Abstract](#abstract)
   - [Technologies](#technologies)
@@ -35,11 +35,11 @@ Mod1 + Tic Tac Toe
   The html and CSS layout went well.
 
 	- Successes
-  Made a unique layout, was able to make the board interactive.
+  Made a unique layout
 
 ## Challenges + Improvements
 	- What was difficult & how you would like to improve on code/project
-  Planning and execution was difficult.
+  Planning and execution was difficult. I would like to improve my ability to use Javascript.
 
 ## Project Specs
   - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html)
