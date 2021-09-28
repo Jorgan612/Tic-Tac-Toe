@@ -1,11 +1,10 @@
 # Title
-Mod + Project Name
+Mod1 + Tic Tac Toe
 
-
+  
 ## Table of Contents
   - [Abstract](#abstract)
   - [Technologies](#technologies)
-  - [Code Architecture](#code-architecture)
   - [Illustrations](#illustrations)
   - [Install + Setup](#set-up)
   - [Contributors](#contributors)
@@ -14,42 +13,33 @@ Mod + Project Name
   - [Project Specs](#project-specs)
 
 ## Abstract
-	Overview of project + goals
+	Build a functioning Tic Tac Toe board to play the game on.
 
 ## Technologies
   - Javascript
-  - eslint
-  - node
+  - html
+  - CSS
   - Atom
-	- WebPack
-	- API
-
-
-## Code Architecture
-
 
 ## Illustrations
 
-Use https://gifcap.dev/ to make GIFs
-
-
-## Install + Setup
-	- Install instructions, how to access the website and how to use the website
-
+![tic-tac-toe-main](https://user-images.githubusercontent.com/83175748/135170112-d421675b-e302-4fc3-aa56-11bb90670ddd.png)
+![tic-tac-toe-win](https://user-images.githubusercontent.com/83175748/135170117-2974de16-909e-4ba0-84f5-ba35bfa8fdf9.png)
 
 
 ## Contributors
-  - [Hayley Dixon](https://github.com/hheyhhay)
+  - [Jessica Organ](https://github.com/Jorgan612)
 
 ## Wins
 	- What went well!
+  The html and CSS layout went well.
+
 	- Successes
+  Made a unique layout, was able to make the board interactive.
 
 ## Challenges + Improvements
 	- What was difficult & how you would like to improve on code/project
-	- Any Bugs
-	- Future Iterations
-
+  Planning and execution was difficult.
 
 ## Project Specs
-  - The project spec & rubric can be found [here](insert project spec sheet here)
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html)

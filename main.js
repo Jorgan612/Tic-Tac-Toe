@@ -1,10 +1,11 @@
 // Query Selectors
-
 var boardContainer = document.querySelector('#boardContainer');
-// var boardIconContainer = document.querySelectorAll('.box');
 var boardArticle = document.querySelector('article');
 var vampIcon = document.querySelector('#vamp');
 var skullIcon = document.querySelector('#skull');
+var skullWin = document.querySelector('#skullWin');
+var vampWin = document.querySelector('#vampWin');
+var vampTotalWins = document.querySelector('#vampTotalWins')
 var boxZero = document.getElementById('0');
 var boxOne = document.getElementById('1');
 var boxTwo = document.getElementById('2');
@@ -18,10 +19,6 @@ var boxEight = document.getElementById('8');
 var boxes = [boxZero, boxOne, boxTwo, boxThree, boxFour, boxFive, boxSix, boxSeven, boxEight];
 var game = new Game();
 
-var vampMoves = [];
-// var skullMoves = [];
-
-
 // Event Listeners
 
 boardContainer.addEventListener('click', function(event) {
@@ -34,13 +31,14 @@ boardContainer.addEventListener('click', function(event) {
 // Functions
 
 function clickTargetBox(target) {
-  console.log(target)
+  // console.log(target)
   if (target.innerHTML !== "") {
     return;
   } else {
-    game.trackVampData(target);
+    game.trackPlayerData(target);
     game.trackPlayerTurn();
     ghoulTurn(target);
+    game.checkWinningConditions(target);
     }
   }
 
@@ -56,6 +54,26 @@ function ghoulTurn(target) {
   }
 }
 
+function ghoul1Wins(target) {
+  skullIcon.classList.add('hidden');
+  vampIcon.classList.add('hidden');
+  vampWin.classList.remove('hidden');
+  // need to figure out a way to access player wins from class
+  vampTotalWins.innerText = `Wins: ${game.player1.wins}`;
+  // invoke board reset function
+  // resetBoard(); DOESN'T WORK
+};
 
-// `<img class="skull-icon" src="./assets/purzen_skull.svg" alt="white human skull">`
-// `<img class="vamplips-icon" src="./assets/vamplips.svg" alt="red vampire lips">`
+function ghoul2Wins(target) {
+  skullIcon.classList.add('hidden');
+  vampIcon.classList.add('hidden');
+  skullWin.classList.remove('hidden');
+  skullTotalWins.innerText = `Wins: ${game.player2.wins}`;
+  // invoke board reset function
+  // resetBoard(); DOESN'T WORK
+};
+
+// doesn't work vvvvvv
+function resetBoard(target) {
+  target.innerText = "";
+};
