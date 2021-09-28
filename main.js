@@ -18,6 +18,9 @@ var boxEight = document.getElementById('8');
 var boxes = [boxZero, boxOne, boxTwo, boxThree, boxFour, boxFive, boxSix, boxSeven, boxEight];
 var game = new Game();
 
+var vampMoves = [];
+// var skullMoves = [];
+
 
 // Event Listeners
 
@@ -31,10 +34,11 @@ boardContainer.addEventListener('click', function(event) {
 // Functions
 
 function clickTargetBox(target) {
+  console.log(target)
   if (target.innerHTML !== "") {
     return;
   } else {
-    game.trackBoardData(target);
+    game.trackVampData(target);
     game.trackPlayerTurn();
     ghoulTurn(target);
     }
