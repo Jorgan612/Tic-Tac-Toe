@@ -53,7 +53,9 @@ checkForDraw() {
   }
   resetGame() {
     // clearTimeout(timeoutId);
-    
+    this.player1Moves = [];
+    this.player2Moves = [];
+
   }
 };
 
