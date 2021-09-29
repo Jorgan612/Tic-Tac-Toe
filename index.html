@@ -13,15 +13,18 @@
       <section class="vamplips-player1-section">
         <h1>Ghoul One</h1>
         <p>🦇</p>
-        <h2 class="vamp-wins"></h2>
-        <div>
-          <h3 class="player2-wins hidden"></h3>
+
+        <div class="vamp-wins-div">
+          <h3 class="vamp-total-wins" id="vampTotalWins"></h3>
         </div>
       </section>
       <section class="board-section">
         <h1 class="board-section-header">Play if you Dare!</h1>
         <h1 class="vamp-turn" id="vamp">It's 🦇 turn!</h1>
         <h1 class="skull-turn hidden" id="skull">It's 💀 turn!</h1>
+        <h1 class="draw hidden" id="drawMsg">It's a Draw!</h1>
+        <h1 class="vamp-win hidden" id="vampWin">🦇 Wins!<h1>
+        <h1 class="skull-win hidden" id="skullWin">💀 Wins!<h1>
         <div class="div-board-container" id="boardContainer">
           <article class="zero box" id="0"></article>
           <article class="one box" id="1"></article>
@@ -37,9 +40,8 @@
       <section class="skull-player2-section">
         <h1>Ghoul Two</h1>
         <p>💀</p>
-        <h2 class="skull-wins"></h2>
-        <div>
-          <h3 class="player2-wins hidden"></h3>
+        <div class="skull-wins-div">
+          <h3 class="skull-total-wins hidden" id="skullTotalWins"></h3>
         </div>
       </section>
     </main>
