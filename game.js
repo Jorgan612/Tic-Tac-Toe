@@ -52,7 +52,8 @@ checkForDraw() {
 
   }
   resetGame() {
-    clearTimeout(timeoutId);
+    // clearTimeout(timeoutId);
+    
   }
 };
 

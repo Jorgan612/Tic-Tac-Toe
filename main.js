@@ -58,35 +58,36 @@ function ghoulTurn(target) {
 }
 
 function ghoul1Wins(target) {
-  skullIcon.classList.add('hidden');
-  vampIcon.classList.add('hidden');
+  // skullIcon.classList.add('hidden');
+  // vampIcon.classList.add('hidden');
   vampWin.classList.remove('hidden');
   vampTotalWins.innerText = `Wins: ${game.player1.player1Wins}`;
-  // newGame();
+  newGame();
 };
 
 function ghoul2Wins(target) {
-  skullIcon.classList.add('hidden');
-  vampIcon.classList.add('hidden');
+  // skullIcon.classList.add('hidden');
+  // vampIcon.classList.add('hidden');
   skullWin.classList.remove('hidden');
   skullTotalWins.innerText = `Wins: ${game.player2.player2Wins}`;
+  newGame();
 };
 
 function drawGame() {
-  skullIcon.classList.add('hidden');
-  vampIcon.classList.add('hidden');
+  // skullIcon.classList.add('hidden');
+  // vampIcon.classList.add('hidden');
   drawMsg.classList.remove('hidden');
-  
+  newGame();
 }
 
-// function newGame() {
-//   // window.setTimeout(resetBoard, 2000);
-//   // game.resetGame();
-//   skullIcon.classList.add('hidden');
-//   vampIcon.classList.remove('hidden');
-//   vampWin.classList.remove('hidden');
-//   return;
-// };
+function newGame() {
+  window.setTimeout(resetBoard, 2000);
+  game.resetGame();
+  // skullIcon.classList.add('hidden');
+  // vampIcon.classList.remove('hidden');
+  vampWin.classList.remove('hidden');
+  drawMsg.classList.add('hidden');
+};
 
 
 //clearing emojis from board vvvv
@@ -95,3 +96,16 @@ function resetBoard() {
     boxes[i].innerText = '';
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// .
