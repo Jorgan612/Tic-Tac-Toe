@@ -42,6 +42,9 @@ trackPlayerTurn() {
             this.player2.player2Wins++;
             ghoul2Wins();
           // console.log('ghoul two wins');
+        } else if ((this.player1Moves.length + this.player2Moves.length) === 9) {
+          drawGame();
+          return;
         }
     }
 }

@@ -5,6 +5,7 @@ var vampIcon = document.querySelector('#vamp');
 var skullIcon = document.querySelector('#skull');
 var skullWin = document.querySelector('#skullWin');
 var vampWin = document.querySelector('#vampWin');
+var drawMsg = document.querySelector('#drawMsg');
 var vampTotalWins = document.querySelector('#vampTotalWins');
 var skullTotalWins = document.querySelector('#skullTotalWins');
 var boxZero = document.getElementById('0');
@@ -71,6 +72,12 @@ function ghoul2Wins(target) {
   skullTotalWins.innerText = `Wins: ${game.player2.player2Wins}`;
 };
 
+function drawGame() {
+  skullIcon.classList.add('hidden');
+  vampIcon.classList.add('hidden');
+  drawMsg.classList.remove('hidden');
+  
+}
 
 // function newGame() {
 //   // window.setTimeout(resetBoard, 2000);
