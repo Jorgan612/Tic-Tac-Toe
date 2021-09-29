@@ -29,12 +29,12 @@ boardContainer.addEventListener('click', function(event) {
     clickTargetBox(target);
   }
 });
+
 window.addEventListener('load', onPageLoad);
 
 // Functions
 
 function clickTargetBox(target) {
-  // console.log(target)
   if (target.innerHTML !== "") {
     return;
   } else {
@@ -61,20 +61,17 @@ function ghoul1Wins() {
   vampWin.classList.remove('hidden');
   vampTotalWins.innerText = `Wins: ${game.player1.player1Wins}`;
   newGame();
-
 };
 
 function ghoul2Wins() {
   skullWin.classList.remove('hidden');
   skullTotalWins.innerText = `Wins: ${game.player2.player2Wins}`;
   newGame();
-
 };
 
 function drawGame() {
   drawMsg.classList.remove('hidden');
   newGame();
-
 };
 
 function newGame() {
