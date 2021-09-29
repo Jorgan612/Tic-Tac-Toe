@@ -5,7 +5,8 @@ var vampIcon = document.querySelector('#vamp');
 var skullIcon = document.querySelector('#skull');
 var skullWin = document.querySelector('#skullWin');
 var vampWin = document.querySelector('#vampWin');
-var vampTotalWins = document.querySelector('#vampTotalWins')
+var vampTotalWins = document.querySelector('#vampTotalWins');
+var skullTotalWins = document.querySelector('#skullTotalWins');
 var boxZero = document.getElementById('0');
 var boxOne = document.getElementById('1');
 var boxTwo = document.getElementById('2');
@@ -59,7 +60,7 @@ function ghoul1Wins(target) {
   skullIcon.classList.add('hidden');
   vampIcon.classList.add('hidden');
   vampWin.classList.remove('hidden');
-  vampTotalWins.innerText = `Wins: ${game.player1.wins}`;
+  vampTotalWins.innerText = `Wins: ${game.player1.player1Wins}`;
   // newGame();
 };
 
@@ -67,7 +68,7 @@ function ghoul2Wins(target) {
   skullIcon.classList.add('hidden');
   vampIcon.classList.add('hidden');
   skullWin.classList.remove('hidden');
-  skullTotalWins.innerText = `Wins: ${game.player2.wins}`;
+  skullTotalWins.innerText = `Wins: ${game.player2.player2Wins}`;
 };
 
 

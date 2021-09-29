@@ -27,18 +27,19 @@ trackPlayerTurn() {
   }
 
   checkWinningConditions(target) {
-    var winningConditions = [[0, 1, 2], [2, 1, 0], [5, 4, 3], [3, 4, 5], [6, 7, 8], [8, 7, 6], [6, 3 ,0], [0, 3, 6], [7, 4, 1], [1, 4 ,7], [8, 5, 2], [2, 5, 8], [8, 4, 0], [0, 4, 8], [6, 4, 2], [2, 4, 6]];
+    var winningConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4 ,7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
     for (var i = 0; i < winningConditions.length; i++) {
-      if (winningConditions[i][0] === this.player1Moves[0]
-        && winningConditions[i][1] === this.player1Moves[1]
-        && winningConditions[i][2] === this.player1Moves[2]) {
-          this.player1.wins++;
-          console.log(this.player1.wins)
+      if (this.player1Moves.includes(winningConditions[i][0])
+        && this.player1Moves.includes(winningConditions[i][1])
+        && this.player1Moves.includes(winningConditions[i][2])) {
+          this.player1.player1Wins++;
+          // console.log(this.player1.player1Wins)
           ghoul1Wins();
           // console.log('ghoul one wins');
-        } else if (winningConditions[i][0] === this.player2Moves[0]
-          && winningConditions[i][1] === this.player2Moves[1]
-          && winningConditions[i][2] === this.player2Moves[2]){
+        } else if (this.player2Moves.includes(winningConditions[i][0])
+          && this.player2Moves.includes(winningConditions[i][1])
+          && this.player2Moves.includes(winningConditions[i][2])) {
+            this.player2.player2Wins++;
             ghoul2Wins();
           // console.log('ghoul two wins');
         }
