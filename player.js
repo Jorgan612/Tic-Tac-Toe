@@ -6,7 +6,8 @@ class Player {
     this.player2Wins = 0;
   }
   saveWinsToStorage() {
-
+    var stringifiedWins = JSON.stringify(game);
+    localStorage.setItem('gameWins', stringifiedWins);
   }
   retrieveWinsFromStorage() {
 

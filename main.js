@@ -19,7 +19,7 @@ var boxSeven = document.getElementById('7');
 var boxEight = document.getElementById('8');
 
 var boxes = [boxZero, boxOne, boxTwo, boxThree, boxFour, boxFive, boxSix, boxSeven, boxEight];
-var game = new Game();
+var game;
 // var timeoutId = setTimeout(resetBoard, 2000);
 
 // Event Listeners
@@ -30,6 +30,7 @@ boardContainer.addEventListener('click', function(event) {
     clickTargetBox(target);
   }
 });
+window.addEventListener('load', onPageLoad);
 
 // Functions
 
@@ -57,20 +58,22 @@ function ghoulTurn(target) {
   }
 }
 
-function ghoul1Wins(target) {
+function ghoul1Wins() {
   // skullIcon.classList.add('hidden');
   // vampIcon.classList.add('hidden');
   vampWin.classList.remove('hidden');
   vampTotalWins.innerText = `Wins: ${game.player1.player1Wins}`;
   newGame();
+
 };
 
-function ghoul2Wins(target) {
+function ghoul2Wins() {
   // skullIcon.classList.add('hidden');
   // vampIcon.classList.add('hidden');
   skullWin.classList.remove('hidden');
   skullTotalWins.innerText = `Wins: ${game.player2.player2Wins}`;
   newGame();
+
 };
 
 function drawGame() {
@@ -78,27 +81,40 @@ function drawGame() {
   // vampIcon.classList.add('hidden');
   drawMsg.classList.remove('hidden');
   newGame();
+
 }
 
 function newGame() {
   window.setTimeout(resetBoard, 2000);
   game.resetGame();
-  // skullIcon.classList.add('hidden');
-  // vampIcon.classList.remove('hidden');
-  vampWin.classList.remove('hidden');
-  drawMsg.classList.add('hidden');
 };
 
-
-//clearing emojis from board vvvv
 function resetBoard() {
   for (var i = 0; i < boxes.length; i++) {
     boxes[i].innerText = '';
   }
+  skullWin.classList.add('hidden');
+  vampWin.classList.add('hidden');
+  drawMsg.classList.add('hidden');
 }
 
+function retrieveWinsFromStorage() {
+  var retrieveWins = localStorage.getItem('gameWins');
+  return JSON.parse(retrieveWins);
+}
 
-
+function onPageLoad() {
+  game = new Game();
+  if (localStorage.hasOwnProperty('gameWins')) {
+    var parsedWins = retrieveWinsFromStorage();
+    game.player1.player1Wins = parsedWins.player1.player1Wins;
+    game.player2.player2Wins = parsedWins.player2.player2Wins;
+    skullTotalWins.innerText = `Wins: ${game.player2.player2Wins}`;
+    vampTotalWins.innerText = `Wins: ${game.player1.player1Wins}`;
+    skullWin.classList.add('hidden');
+    vampWin.classList.add('hidden');
+  }
+}
 
 
 

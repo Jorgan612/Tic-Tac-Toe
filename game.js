@@ -1,11 +1,8 @@
-// var boardSpaces = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
 class Game {
   constructor() {
     this.player1 = new Player('ghoul1', '🦇');
     this.player2 = new Player('ghoul2', '💀');
     this.turn = this.player1;
-    // this.board = boardSpaces
     this.player1Moves = [];
     this.player2Moves = [];
 }
@@ -33,31 +30,23 @@ trackPlayerTurn() {
         && this.player1Moves.includes(winningConditions[i][1])
         && this.player1Moves.includes(winningConditions[i][2])) {
           this.player1.player1Wins++;
-          // console.log(this.player1.player1Wins)
+          game.player1.saveWinsToStorage();
           ghoul1Wins();
-          // console.log('ghoul one wins');
         } else if (this.player2Moves.includes(winningConditions[i][0])
           && this.player2Moves.includes(winningConditions[i][1])
           && this.player2Moves.includes(winningConditions[i][2])) {
             this.player2.player2Wins++;
+            game.player2.saveWinsToStorage();
             ghoul2Wins();
-          // console.log('ghoul two wins');
         } else if ((this.player1Moves.length + this.player2Moves.length) === 9) {
           drawGame();
           return;
         }
     }
 }
-checkForDraw() {
 
-  }
   resetGame() {
-    // clearTimeout(timeoutId);
     this.player1Moves = [];
     this.player2Moves = [];
-
   }
 };
-
-// var vampPlayer = new Player(ghoul1);
-// var skullPlayer = new Player(ghoul2);
